@@ -12,39 +12,39 @@ import WebKit
 @Observable
 open final class SUIState {
 
-    public internal(set) var root: SUIWebViewRoot? = nil
-    public internal(set) var flag: SUIFlag = .none
+    open internal(set) var root: SUIWebViewRoot? = nil
+    open internal(set) var flag: SUIFlag = .none
 
-    public var query: String = ""
+    open var query: String = ""
 
     // MARK: -WKWebView State
-    public var title: String?                       /* { get } */
-    public var url: URL?                            /* { get } */
-    public var mediaType: String?                   /* { get } */
-    public var customUserAgent: String?             /* { get set } */
-    public var serverTrust: SecTrust?               /* { get } */
-    public var hasOnlySecureContent: Bool?          /* { get } */
-    public var themeColor: UIColor?                 /* { get } */
-    public var underPageBackgroundColor: UIColor?   /* { get set } */
+    open var title: String?                       /* { get } */
+    open var url: URL?                            /* { get } */
+    open var mediaType: String?                   /* { get } */
+    open var customUserAgent: String?             /* { get set } */
+    open var serverTrust: SecTrust?               /* { get } */
+    open var hasOnlySecureContent: Bool?          /* { get } */
+    open var themeColor: UIColor?                 /* { get } */
+    open var underPageBackgroundColor: UIColor?   /* { get set } */
 
     // MARK: -WKWebView Navigation State
-    public var canGoBack: Bool?                     /* { get } */
-    public var canGoForward: Bool?                  /* { get } */
-    public var estimatedProgress: Double?           /* { get } */
-    public var backForwardList: WKBackForwardList?  /* { get } */
+    open var canGoBack: Bool?                     /* { get } */
+    open var canGoForward: Bool?                  /* { get } */
+    open var estimatedProgress: Double?           /* { get } */
+    open var backForwardList: WKBackForwardList?  /* { get } */
 
     @ObservationIgnored
     internal var values: [Int:Int] = [:]
 
     internal var configurations: [Int:SUIWebViewRoot.Configuration] = [:]
 
-    init(insert: Bool = false) {
+    open init(insert: Bool = false) {
         if insert {
             Self.insert(self)
         }
     }
 
-    init(query: String, insert: Bool = false) {
+    open init(query: String, insert: Bool = false) {
         self.query = query
         self.flag = .load
         if insert {
@@ -52,7 +52,7 @@ open final class SUIState {
         }
     }
 
-    init(query: String, action: SUIFlag, insert: Bool = false) {
+    open init(query: String, action: SUIFlag, insert: Bool = false) {
         self.query = query
         self.flag = action
         if insert {
