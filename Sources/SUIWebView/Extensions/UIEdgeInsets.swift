@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIEdgeInsets: Hashable {
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(top)
         hasher.combine(bottom)
         hasher.combine(left)
