@@ -7,13 +7,13 @@
 
 import WebKit
 
-open final class SUIWKView: WKWebView {
+public final class SUIWKView: WKWebView {
 
-    open typealias ID = UUID
+    public typealias ID = UUID
     
-    open let id: SUIWKView.ID
+    public let id: SUIWKView.ID
 
-    override open init(frame: CGRect = .zero, configuration: WKWebViewConfiguration) {
+    override public init(frame: CGRect = .zero, configuration: WKWebViewConfiguration) {
         self.id = .init()
         super.init(frame: frame, configuration: configuration)
     }

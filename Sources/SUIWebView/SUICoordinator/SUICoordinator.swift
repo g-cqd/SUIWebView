@@ -9,15 +9,15 @@ import WebKit
 import SwiftUI
 
 @Observable
-open final class SUICoordinator: NSObject {
+public final class SUICoordinator: NSObject {
 
-    open typealias ID = SUIWebViewRoot.ID
+    public typealias ID = SUIWebViewRoot.ID
 
     internal var root: SUIWebViewRoot
 
-    open let id: ID
+    public let id: ID
 
-    open init(_ root: SUIWebViewRoot) {
+    public init(_ root: SUIWebViewRoot) {
         self.id = root.id
         self.root = root
         super.init()

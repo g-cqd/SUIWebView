@@ -7,7 +7,7 @@
 
 import Foundation
 
-open enum SUIFlag: Int, CaseIterable {
+public enum SUIFlag: Int, CaseIterable {
 
     case none
     case load

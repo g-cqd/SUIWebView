@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-open struct SUIWebView: View {
+public struct SUIWebView: View {
 
     static private let logger: Logger = .init()
 
-    @State private var state: SUIState
+    @State public var state: SUIState
 
-    open init(_ state: SUIState = .create()) {
+    public init(_ state: SUIState = .create()) {
         self.state = state
     }
 
-    open var body: some View {
+    public var body: some View {
         SUIWebViewRoot($state)
     }
 }
 
 extension SUIWebView {
-    open func set<A:Hashable>(
+    public func set<A:Hashable>(
         _ path: ReferenceWritableKeyPath<SUIWKView,A>,
         to value: A
     ) -> Self {
@@ -37,7 +37,8 @@ extension SUIWebView {
         }
         return self
     }
-    open func set<A:Hashable, B:Hashable>(
+    
+    public func set<A:Hashable, B:Hashable>(
         _ path: ReferenceWritableKeyPath<SUIWKView,B>,
         computing action: @escaping (A?) -> B?
     ) -> Self {

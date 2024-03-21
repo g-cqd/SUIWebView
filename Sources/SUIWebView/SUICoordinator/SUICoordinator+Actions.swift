@@ -9,26 +9,26 @@ import WebKit
 
 extension SUICoordinator {
 
-    open func load(_ newQuery: String) {
+    public func load(_ newQuery: String) {
         self.root.load(newQuery)
     }
 
-    open func reload() { self.root.reload() }
+    public func reload() { self.root.reload() }
 
-    open func reloadForce() { self.root.reloadForce() }
+    public func reloadForce() { self.root.reloadForce() }
 
-    open func goBack() { self.root.goBack() }
+    public func goBack() { self.root.goBack() }
 
-    open func goForward() { self.root.goForward() }
+    public func goForward() { self.root.goForward() }
 
-    open func stop() { self.root.stop() }
+    public func stop() { self.root.stop() }
 
     @discardableResult
-    open func idle() -> SUIFlag {
+    public func idle() -> SUIFlag {
         self.root.idle()
     }
 
-    open func update(from uiView: WKWebView) {
+    public func update(from uiView: WKWebView) {
         self.root.update(from: uiView)
     }
 }
