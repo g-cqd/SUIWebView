@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Algorithms
 import Collections
 
 // MARK: - UIViewRepresentable

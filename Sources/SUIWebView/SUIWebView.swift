@@ -17,7 +17,7 @@ open struct SUIWebView: View {
         self.state = state
     }
 
-    var body: some View {
+    open var body: some View {
         SUIWebViewRoot($state)
     }
 }
