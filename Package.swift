@@ -14,7 +14,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SUIWebView"),
+            name: "SUIWebView",
+            dependencies: [
+                .product(name: "Collections", package: "swift-collections")
+            ]
+        ),
         .testTarget(
             name: "SUIWebViewTests",
             dependencies: ["SUIWebView"]),
