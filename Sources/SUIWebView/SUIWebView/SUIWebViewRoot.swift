@@ -11,17 +11,17 @@ import OSLog
 
 open struct SUIWebViewRoot {
 
-    typealias UIViewType = SUIWKView
-    typealias Coordinator = SUICoordinator
-    typealias ID = UIViewType.ID
+    open typealias UIViewType = SUIWKView
+    open typealias Coordinator = SUICoordinator
+    open typealias ID = UIViewType.ID
 
     internal var uiView: UIViewType
     internal var state: Binding<SUIState>
     internal var unwrapped: SUIState { self.state.wrappedValue }
 
-    public let id: ID
+    open let id: ID
 
-    init(_ state: Binding<SUIState>) {
+    open init(_ state: Binding<SUIState>) {
         let view = SUIWKView(frame: .zero, configuration: .init())
         let id = view.id
         self.uiView = view
@@ -29,7 +29,7 @@ open struct SUIWebViewRoot {
         self.state = state
     }
 
-    init(_ state: Binding<SUIState>, with configuration: WKWebViewConfiguration) {
+    open init(_ state: Binding<SUIState>, with configuration: WKWebViewConfiguration) {
         let view = SUIWKView(frame: .zero, configuration: configuration)
         let id = view.id
         self.uiView = view

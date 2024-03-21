@@ -9,11 +9,11 @@ import WebKit
 
 open final class SUIWKView: WKWebView {
 
-    typealias ID = UUID
+    open typealias ID = UUID
     
-    public let id: SUIWKView.ID
+    open let id: SUIWKView.ID
 
-    override init(frame: CGRect = .zero, configuration: WKWebViewConfiguration) {
+    override open init(frame: CGRect = .zero, configuration: WKWebViewConfiguration) {
         self.id = .init()
         super.init(frame: frame, configuration: configuration)
     }

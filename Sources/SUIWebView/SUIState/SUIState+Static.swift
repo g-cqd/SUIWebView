@@ -12,29 +12,29 @@ import OSLog
 extension SUIState {
     static internal var states: [ID: SUIState] = [:]
     
-    static internal func create(insert: Bool = false) -> SUIState {
+    static open func create(insert: Bool = false) -> SUIState {
         .init(insert: insert)
     }
 
-    static internal func create(query: String, insert: Bool = false) -> SUIState {
+    static open func create(query: String, insert: Bool = false) -> SUIState {
         .init(query: query, insert: insert)
     }
 
-    static internal func create(query: String, action: SUIFlag, insert: Bool = false) -> SUIState {
+    static open func create(query: String, action: SUIFlag, insert: Bool = false) -> SUIState {
         .init(query: query, action: action, insert: insert)
     }
 
     @discardableResult
-    static internal func insert(_ state: SUIState) -> Bool {
+    static open func insert(_ state: SUIState) -> Bool {
         Self.states.updateValue(state, forKey: state.id) != nil
     }
 
     @discardableResult
-    static internal func remove(_ id: ID) -> Bool {
+    static open func remove(_ id: ID) -> Bool {
         Self.states.removeValue(forKey: id) != nil
     }
 
-    static internal func get(for id: ID) -> SUIState? {
+    static open func get(for id: ID) -> SUIState? {
         Self.states[id]
     }
 

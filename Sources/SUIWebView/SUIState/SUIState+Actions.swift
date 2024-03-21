@@ -9,23 +9,23 @@ import Foundation
 
 extension SUIState {
 
-    func load(_ newQuery: String? = nil) {
+    open func load(_ newQuery: String? = nil) {
         self.query = newQuery ?? self.query
         self.flag = .load
     }
 
-    func stop() { self.flag = .stop }
+    open func stop() { self.flag = .stop }
 
-    func reload() { self.flag = .reload }
+    open func reload() { self.flag = .reload }
 
-    func reloadForce() { self.flag = .reloadForce }
+    open func reloadForce() { self.flag = .reloadForce }
 
-    func goBack() { self.flag = .back }
+    open func goBack() { self.flag = .back }
 
-    func goForward() { self.flag = .forward }
+    open func goForward() { self.flag = .forward }
 
     @discardableResult
-    func idle() -> SUIFlag {
+    open func idle() -> SUIFlag {
         let flag = self.flag
         self.flag = .none
         return flag

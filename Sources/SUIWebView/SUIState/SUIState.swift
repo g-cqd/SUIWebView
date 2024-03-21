@@ -65,7 +65,7 @@ open final class SUIState {
 // MARK: - Public Methods
 extension SUIState {
 
-    public func update(from uiView: WKWebView) {
+    open func update(from uiView: WKWebView) {
         self.query = uiView.url?.absoluteString ?? self.query
         self.canGoBack = uiView.canGoBack
         self.canGoForward = uiView.canGoForward

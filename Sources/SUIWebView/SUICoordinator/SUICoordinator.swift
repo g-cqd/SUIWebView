@@ -11,13 +11,13 @@ import SwiftUI
 @Observable
 open final class SUICoordinator: NSObject {
 
-    typealias ID = SUIWebViewRoot.ID
+    open typealias ID = SUIWebViewRoot.ID
 
     internal var root: SUIWebViewRoot
 
-    public let id: ID
+    open let id: ID
 
-    init(_ root: SUIWebViewRoot) {
+    open init(_ root: SUIWebViewRoot) {
         self.id = root.id
         self.root = root
         super.init()

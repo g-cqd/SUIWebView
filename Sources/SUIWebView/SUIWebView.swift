@@ -13,7 +13,7 @@ open struct SUIWebView: View {
 
     @State private var state: SUIState
 
-    init(_ state: SUIState = .create()) {
+    open init(_ state: SUIState = .create()) {
         self.state = state
     }
 

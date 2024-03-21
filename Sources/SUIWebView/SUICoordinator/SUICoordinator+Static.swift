@@ -14,16 +14,16 @@ extension SUICoordinator {
     static internal var coordinators: [ID: SUICoordinator] = [:]
 
     @discardableResult
-    static public func insert(_ coordinator: SUICoordinator) -> Bool {
+    static open func insert(_ coordinator: SUICoordinator) -> Bool {
         Self.coordinators.updateValue(coordinator, forKey: coordinator.id) != nil
     }
 
     @discardableResult
-    static public func remove(_ id: ID) -> Bool {
+    static open func remove(_ id: ID) -> Bool {
         Self.coordinators.removeValue(forKey: id) != nil
     }
 
-    static public func get(for id: ID) -> SUICoordinator? {
+    static open func get(for id: ID) -> SUICoordinator? {
         Self.coordinators[id]
     }
 

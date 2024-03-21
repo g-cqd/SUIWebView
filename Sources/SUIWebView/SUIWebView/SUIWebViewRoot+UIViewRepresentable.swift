@@ -12,7 +12,7 @@ import Collections
 // MARK: - UIViewRepresentable
 extension SUIWebViewRoot: UIViewRepresentable {
 
-    typealias Configuration = (SUIWKView?) -> Void
+    open typealias Configuration = (SUIWKView?) -> Void
 
     private func composeConfiguration(_ functions: [Configuration]) -> Configuration {
         ({ (value: SUIWKView?) in

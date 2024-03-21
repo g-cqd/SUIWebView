@@ -9,7 +9,7 @@ import WebKit
 
 extension SUIWebViewRoot {
 
-    public func request() -> URLRequest? {
+    open func request() -> URLRequest? {
         return if !unwrapped.query.isEmpty {
             URLRequest(url: URL(string: unwrapped.query)!)
         } else {
@@ -17,35 +17,35 @@ extension SUIWebViewRoot {
         }
     }
 
-    public func load(_ query: String? = nil) {
+    open func load(_ query: String? = nil) {
         unwrapped.load(query ?? unwrapped.query)
     }
 
-    public func stop() {
+    open func stop() {
         unwrapped.stop()
     }
 
-    public func goBack() {
+    open func goBack() {
         unwrapped.goBack()
     }
 
-    public func goForward() {
+    open func goForward() {
         unwrapped.goForward()
     }
 
-    public func reload() {
+    open func reload() {
         unwrapped.reload()
     }
 
-    public func reloadForce() {
+    open func reloadForce() {
         unwrapped.reloadForce()
     }
 
-    public func update(from uiView: WKWebView) {
+    open func update(from uiView: WKWebView) {
         unwrapped.update(from: uiView)
     }
 
-    public func idle() -> SUIFlag {
+    open func idle() -> SUIFlag {
         unwrapped.idle()
     }
 
