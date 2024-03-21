@@ -10,7 +10,7 @@ import WebKit
 // MARK: - WKUIDelegate
 extension SUICoordinator: WKUIDelegate {
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         createWebViewWith configuration: WKWebViewConfiguration,
         for navigationAction: WKNavigationAction,

@@ -14,13 +14,15 @@ public final class SUIState {
 
     public typealias ID = SUIWebViewRoot.ID
 
-    private let insert: Bool = false
+    private var insert: Bool = false
 
     public internal(set) var root: SUIWebViewRoot? = nil {
         didSet {
-            self.id = self.root.id
-            if self.insert {
-                Self.insert(self)
+            if let root = self.root {
+                self.id = root.id
+                if self.insert {
+                    Self.insert(self)
+                }
             }
         }
     }

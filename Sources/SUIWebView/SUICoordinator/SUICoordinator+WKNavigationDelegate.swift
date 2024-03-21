@@ -10,14 +10,14 @@ import WebKit
 // MARK: - WKNavigationDelegate
 extension SUICoordinator: WKNavigationDelegate {
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         didStartProvisionalNavigation navigation: WKNavigation!
     ) {
         Self.logger.info("(SUICoordinator) didStartProvisionalNavigation")
     }
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         didFailProvisionalNavigation navigation: WKNavigation!,
         withError error: any Error
@@ -26,14 +26,14 @@ extension SUICoordinator: WKNavigationDelegate {
         self.idle()
     }
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         didCommit navigation: WKNavigation!
     ) {
         Self.logger.info("(SUICoordinator) didCommit")
     }
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         didFail navigation: WKNavigation!,
         withError error: any Error
@@ -42,14 +42,14 @@ extension SUICoordinator: WKNavigationDelegate {
         self.idle()
     }
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!
     ) {
         Self.logger.info("(SUICoordinator) didReceiveServerRedirectForProvisionalNavigation")
     }
 
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         didFinish navigation: WKNavigation!
     ) {

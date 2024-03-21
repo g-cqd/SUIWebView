@@ -9,10 +9,10 @@ import Foundation
 
 // MARK: - Hashable
 extension SUIWebViewRoot: Hashable {
-    static func == (lhs: SUIWebViewRoot, rhs: SUIWebViewRoot) -> Bool {
+    static public func == (lhs: SUIWebViewRoot, rhs: SUIWebViewRoot) -> Bool {
         lhs.uiView == rhs.uiView
     }
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(self.uiView)
     }
 }
