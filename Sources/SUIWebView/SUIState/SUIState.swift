@@ -12,8 +12,21 @@ import WebKit
 @Observable
 public final class SUIState {
 
-    public internal(set) var root: SUIWebViewRoot? = nil
+    public typealias ID = SUIWebViewRoot.ID
+
+    private let insert: Bool = false
+
+    public internal(set) var root: SUIWebViewRoot? = nil {
+        didSet {
+            self.id = self.root.id
+            if self.insert {
+                Self.insert(self)
+            }
+        }
+    }
     public internal(set) var flag: SUIFlag = .none
+
+    public var id: ID!
 
     public var query: String = ""
 
@@ -39,25 +52,23 @@ public final class SUIState {
     internal var configurations: [Int:SUIWebViewRoot.Configuration] = [:]
 
     public init(insert: Bool = false) {
-        if insert {
-            Self.insert(self)
-        }
+        self.insert = insert
     }
 
     public init(query: String, insert: Bool = false) {
         self.query = query
         self.flag = .load
-        if insert {
-            Self.insert(self)
-        }
+        self.insert = insert
     }
 
     public init(query: String, action: SUIFlag, insert: Bool = false) {
         self.query = query
         self.flag = action
-        if insert {
-            Self.insert(self)
-        }
+        self.insert = insert
+    }
+
+    internal func set(root: SUIWebViewRoot) {
+        self.root = root
     }
 
 }
@@ -65,7 +76,7 @@ public final class SUIState {
 // MARK: - Public Methods
 extension SUIState {
 
-    open func update(from uiView: WKWebView) {
+    public func update(from uiView: WKWebView) {
         self.query = uiView.url?.absoluteString ?? self.query
         self.canGoBack = uiView.canGoBack
         self.canGoForward = uiView.canGoForward

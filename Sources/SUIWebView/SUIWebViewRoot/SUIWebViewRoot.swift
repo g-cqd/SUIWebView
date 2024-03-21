@@ -27,6 +27,7 @@ public struct SUIWebViewRoot {
         self.uiView = view
         self.id = id
         self.state = state
+        self.state.wrappedValue.set(root: self)
     }
 
     public init(_ state: Binding<SUIState>, with configuration: WKWebViewConfiguration) {
@@ -35,6 +36,7 @@ public struct SUIWebViewRoot {
         self.uiView = view
         self.id = id
         self.state = state
+        self.state.wrappedValue.set(root: self)
     }
 
 }

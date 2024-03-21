@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OSLog
 
 public struct SUIWebView: View {
 
